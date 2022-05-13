@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+              <table style="margin-top: 20px;  background-color: rgba(255, 222, 64, 0.2);; width: 100%; padding-bottom:25px;">
+                <tr>
+                  <td align="center">
+                    <p style="color: #FF462D; font-family: Helvetica; font-size: 27px; font-weight: bold; margin-bottom: 10px;">
+                      Honorable Mentions
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <table>
+                      <tr>
+                        {% for item in contact.recommended_ids %}
+                        <td>
+                            <table style="background-color: #FFFF; padding: 10px; min-width: 200px; min-height: 240px;  border: 1px solid #CBCBCB; margin: 0 7px;">
+                              <tr>
+                                <td>
+                                  <img src="{{lookups.recommended_restaurants[item].thumbnail}}" alt="{{lookups.recommended_restaurants[item].name}}" width="240" height="240"/>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center">
+                                  <p style="margin: 3px; color: #58585C; font-size: 24px; font-family: Helvetica;">
+                                    {{lookups.recommended_restaurants[item].name}}
+                                  </p>
+                                  <p style="margin: 3px;  color: #336DDE; font-family: Helvetica; font-size: 20px; font-weight: bold;">
+                                    <a href="{{lookups.recommended_restaurants[item].url}}" target="_blank" style="text-decoration: none;">
+                                        Book now
+                                    </a>
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+    </table>
+</body>
+</html>
